@@ -1,0 +1,239 @@
+.app-header ion-toolbar {
+  --background: #111827;
+  --color: #ffffff;
+  --border-width: 0;
+}
+
+.color-content {
+  --background: #f8fafc;
+}
+
+.page-container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.control-panel {
+  width: 100%;
+  max-width: 760px;
+  padding: 28px;
+  border: 1px solid rgba(148, 163, 184, .28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 20px 52px rgba(15, 23, 42, .22);
+  backdrop-filter: blur(14px);
+}
+
+.panel-header {
+  margin-bottom: 24px;
+}
+
+.panel-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #ecfeff;
+  color: #0e7490;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.panel-header h1 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 34px;
+  font-weight: 850;
+  line-height: 1.08;
+}
+
+.panel-header p {
+  max-width: 540px;
+  margin: 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.preview-area {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.color-preview {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22);
+}
+
+.color-preview span {
+  font-size: 13px;
+  font-weight: 800;
+  opacity: .78;
+  text-transform: uppercase;
+}
+
+.color-preview strong {
+  margin-top: 6px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.color-values {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.color-values span,
+.color-values strong {
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, .06);
+}
+
+.range-list {
+  display: grid;
+  gap: 12px;
+}
+
+.range-item {
+  --background: #f8fafc;
+  --border-radius: 8px;
+  --inner-padding-end: 12px;
+  --padding-bottom: 8px;
+  --padding-end: 0;
+  --padding-start: 14px;
+  --padding-top: 8px;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+}
+
+.range-item ion-label {
+  min-width: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-right: 12px;
+}
+
+.range-item ion-label span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.range-item ion-label strong {
+  color: #111827;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.range-item ion-range {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.red-channel {
+  border-left: 5px solid #ef4444;
+}
+
+.green-channel {
+  border-left: 5px solid #22c55e;
+}
+
+.blue-channel {
+  border-left: 5px solid #3b82f6;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.dynamic-button,
+.secondary-action,
+.reset-action {
+  min-height: 48px;
+  margin: 0;
+  font-weight: 800;
+  --border-radius: 8px;
+}
+
+.dynamic-button {
+  --box-shadow: 0 12px 22px rgba(15, 23, 42, .18);
+}
+
+.secondary-action {
+  --background: #0f766e;
+  --background-hover: #115e59;
+  --background-activated: #134e4a;
+  --box-shadow: 0 12px 22px rgba(15, 118, 110, .22);
+}
+
+.reset-action {
+  min-width: 104px;
+  --color: #475569;
+}
+
+@media (max-width: 680px) {
+  .page-container {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .control-panel {
+    padding: 20px;
+  }
+
+  .panel-header h1 {
+    font-size: 28px;
+  }
+
+  .preview-area,
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .color-preview,
+  .color-values {
+    min-height: 150px;
+  }
+
+  .range-item {
+    --inner-padding-end: 10px;
+    --padding-start: 12px;
+  }
+
+  .range-item ion-label {
+    min-width: 86px;
+  }
+}

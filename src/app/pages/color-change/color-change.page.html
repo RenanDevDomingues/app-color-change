@@ -1,0 +1,122 @@
+<ion-header class="app-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Color Change</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="color-content"
+  [style.--background]="background_color"
+>
+  <div class="page-container">
+    <section class="control-panel">
+      <div class="panel-header">
+        <span class="panel-label">Editor RGB</span>
+        <h1>Monte a cor ideal</h1>
+        <p>Use os controles para ajustar a cor e aplique o resultado no botão ou no fundo da tela.</p>
+      </div>
+
+      <div class="preview-area">
+        <div
+          class="color-preview"
+          [style.background]="rgbColor"
+          [style.color]="contrastColor"
+        >
+          <span>Preview</span>
+          <strong>{{ hexColor }}</strong>
+        </div>
+
+        <div class="color-values">
+          <span>{{ rgbColor }}</span>
+          <strong>{{ hexColor }}</strong>
+        </div>
+      </div>
+
+      <div class="range-list">
+        <ion-item lines="none" class="range-item red-channel">
+          <ion-label>
+            <span>Vermelho</span>
+            <strong>{{ red_value }}</strong>
+          </ion-label>
+
+          <ion-range
+            min="0"
+            max="255"
+            step="1"
+            color="danger"
+            [(ngModel)]="red_value"
+            aria-label="Valor vermelho"
+          ></ion-range>
+        </ion-item>
+
+        <ion-item lines="none" class="range-item green-channel">
+          <ion-label>
+            <span>Verde</span>
+            <strong>{{ green_value }}</strong>
+          </ion-label>
+
+          <ion-range
+            min="0"
+            max="255"
+            step="1"
+            color="success"
+            [(ngModel)]="green_value"
+            aria-label="Valor verde"
+          ></ion-range>
+        </ion-item>
+
+        <ion-item lines="none" class="range-item blue-channel">
+          <ion-label>
+            <span>Azul</span>
+            <strong>{{ blue_value }}</strong>
+          </ion-label>
+
+          <ion-range
+            min="0"
+            max="255"
+            step="1"
+            color="primary"
+            [(ngModel)]="blue_value"
+            aria-label="Valor azul"
+          ></ion-range>
+        </ion-item>
+      </div>
+
+      <div class="action-grid">
+        <ion-button
+          expand="block"
+          class="dynamic-button"
+          [style.--background]="button_color"
+          [style.--background-activated]="button_color"
+          [style.--background-focused]="button_color"
+          [style.--background-hover]="button_color"
+          [style.--color]="buttonTextColor"
+          (click)="alterarCorBotao()"
+        >
+          Aplicar no botão
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          class="secondary-action"
+          (click)="alterarCorFundo()"
+        >
+          Aplicar no fundo
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill="clear"
+          class="reset-action"
+          (click)="resetarCores()"
+        >
+          Resetar
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>
